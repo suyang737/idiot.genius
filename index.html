@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>개인 프로필 링크 모음 (구름체+구름 애니메이션)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+  @font-face {
+    font-family: 'NanumGureum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NanumGureum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87ceeb 0%, #b0e0ff 100%);
+    font-family: 'Jua', 'NanumGureum', 'Baloo 2', cursive, sans-serif;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #114b5f;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+  }
+
+  .links-container {
+    width: 100%;
+    max-width: 400px;
+    background: #e0f7fa;
+    border-radius: 25px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+  }
+
+  .link-item {
+    display: block;
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #0277bd;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(2, 119, 189, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .link-item:hover {
+    background-color: #81d4fa;
+    transform: scale(1.05);
+    color: #014f86;
+    box-shadow: 0 6px 15px rgba(1, 79, 134, 0.6);
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #075985;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* 구름 스타일 */
+  .cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow:
+      60px 0px 0px 0px #fff,
+      120px 10px 0px 0px #fff,
+      90px 30px 0px 0px #fff,
+      30px 20px 0px 0px #fff;
+    width: 80px;
+    height: 50px;
+    top: 10%;
+    left: -150px;
+    animation: cloudMove 40s linear infinite;
+  }
+  .cloud.small {
+    width: 50px;
+    height: 30px;
+    top: 30%;
+    left: -100px;
+    opacity: 0.7;
+    animation-duration: 30s;
+  }
+  .cloud.large {
+    width: 120px;
+    height: 70px;
+    top: 60%;
+    left: -200px;
+    opacity: 0.9;
+    animation-duration: 50s;
+  }
+
+  @keyframes cloudMove {
+    0% { left: -200px; }
+    100% { left: 110vw; }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding: 30px 10px;
+    }
+    .links-container {
+      padding: 20px 8px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="cloud"></div>
+  <div class="cloud small"></div>
+  <div class="cloud large"></div>
+  <h1>우리 2조를 소개합니다</h1>
+  <div class="links-container">
+    <a href="https://alsdb0508.github.io/whalsdb/" class="link-item" target="_blank">10622조민유</a>
+    <a href="#" class="link-item">21020최수빈</a>
+    <a href="https://suyang737.github.io/suyang.oo/" class="link-item" target="_blank">20914임수양</a>
+    <!-- 필요에 따라 링크 추가 -->
+  </div>
+  <footer>
+    &copy; 2025. C.Crew
+  </footer>
+</body>
+</html>
